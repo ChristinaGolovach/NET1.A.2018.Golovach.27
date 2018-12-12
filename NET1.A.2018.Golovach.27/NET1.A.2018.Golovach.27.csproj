@@ -147,6 +147,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\CustomHttpHandlers\ImageHttpHandler.cs" />
+    <Compile Include="Infrastructure\CustomHttpModules\ImageHttpModule.cs" />
     <Compile Include="Infrastructure\CustomRouteHandlers\ImageRouteHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -191,7 +192,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
-    <Folder Include="Infrastructure\CustomHttpModules\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

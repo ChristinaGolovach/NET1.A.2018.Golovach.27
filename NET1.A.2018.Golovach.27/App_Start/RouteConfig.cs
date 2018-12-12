@@ -19,8 +19,12 @@ namespace NET1.A._2018.Golovach._27
             //routes.IgnoreRoute("Image/{*path}");
 
             //For Task 2
-            routes.Add(new Route("image/{id}", new ImageRouteHandler()));
-     
+            //routes.Add(new Route("Image/{id}", new ImageRouteHandler()));
+
+            //For Task 3
+            routes.MapRoute(
+                name:"ImageRoute",
+                url: "{controller}/{id}");     
 
             routes.MapRoute(
                 name: "Default",
