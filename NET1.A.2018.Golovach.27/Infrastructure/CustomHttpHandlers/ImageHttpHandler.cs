@@ -15,21 +15,24 @@ namespace NET1.A._2018.Golovach._27.Infrastructure.CustomHttpHandlers
 
         public void ProcessRequest(HttpContext context)
         {
-            //image/?name=1
-            string imageName = context.Request.QueryString["name"];
+            //image/?name=1 - Task 1
+            //string imageName = context.Request.QueryString["name"];
+            
+            // Task 2
+            var imageName = context.Request.RequestContext.RouteData.Values["id"];
             string appPath = HttpRuntime.AppDomainAppPath;
             string path = $@"{appPath}\Images\{imageName}.jpg";
 
             if (!File.Exists(path))
             {
-                context.Response.Write("Image does not exists");
+                context.Response.Write("Image does not exist");
             }
             else
             {
                 context.Response.ContentType = "image/jpg";
                 byte[] image = File.ReadAllBytes(path);
                 context.Response.BinaryWrite(image);
-            }
+            }                        
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using NET1.A._2018.Golovach._27.Infrastructure.CustomHttpHandlers;
+using NET1.A._2018.Golovach._27.Infrastructure.CustomRouteHandlers;
 
 namespace NET1.A._2018.Golovach._27
 {
@@ -14,7 +15,11 @@ namespace NET1.A._2018.Golovach._27
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.IgnoreRoute("Image/{*path}");
+            //For Task 1
+            //routes.IgnoreRoute("Image/{*path}");
+
+            //For Task 2
+            routes.Add(new Route("image/{id}", new ImageRouteHandler()));
      
 
             routes.MapRoute(
